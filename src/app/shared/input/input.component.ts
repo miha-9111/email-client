@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class InputComponent {
   @Input() label: string;
   @Input() control: any;
+  @Input() inputType: string // 'password'
 
   showErrors() {
     const { dirty, touched, errors } = this.control;
