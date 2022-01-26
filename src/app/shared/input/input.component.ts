@@ -8,4 +8,9 @@ import { Component, Input } from '@angular/core';
 export class InputComponent {
   @Input() label: string;
   @Input() control: any;
+
+  showErrors() {
+    const { dirty, touched, errors } = this.control;
+    return dirty && touched && errors;
+  }
 }
