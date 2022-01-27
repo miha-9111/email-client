@@ -28,5 +28,8 @@
     <p *ngIf="control.errors['noConnection']">
       Can't tell if username is taken
     </p>
+    <p *ngIf="control.errors['unknownError']">
+      Failed to sign up
+    </p>
   </div>
 </div>
