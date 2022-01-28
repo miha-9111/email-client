@@ -29,6 +29,13 @@ export class SigninComponent {
       return;
     }
 
-    this.authService.signIn(this.authForm.value).subscribe(() => {});
+    this.authService.signIn(this.authForm.value).subscribe({
+      next: () => {},
+      error: ({ error }) => {
+        if (error.username || error.password) {
+          this.authForm.setErrors({ credentials: true });
+        }
+      }
+    });
   }
 }
