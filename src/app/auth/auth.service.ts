@@ -40,7 +40,7 @@ export class AuthService {
     });
   }
 
-  signup(credentials: SignupCredentials) {
+  signUp(credentials: SignupCredentials) {
     return this.http
       .post<SignupResponse>(`${this.rootUrl}/auth/signup`, credentials)
       .pipe(
@@ -58,5 +58,15 @@ export class AuthService {
           this.signedIn$.next(authenticated);
         })
     );
+  }
+
+  signOut() {
+    return this.http
+      .post(`${this.rootUrl}/auth/signout`, {})
+      .pipe(
+        tap(() => {
+          this.signedIn$.next(false);
+        })
+      );
   }
 }

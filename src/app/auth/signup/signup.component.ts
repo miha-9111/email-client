@@ -38,7 +38,7 @@ export class SignupComponent {
       return;
     }
 
-    this.authService.signup(this.authForm.value).subscribe({
+    this.authService.signUp(this.authForm.value).subscribe({
       next: response => {
         // Navigate to some other route
       },
