@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailService } from "../email.service";
 
 @Component({
   selector: 'app-email-index',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./email-index.component.scss']
 })
 export class EmailIndexComponent implements OnInit {
+  constructor(private emailService: EmailService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.emailService.getEmails().subscribe(() => {});
   }
-
 }
