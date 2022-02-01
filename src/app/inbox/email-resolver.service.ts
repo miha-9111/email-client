@@ -6,6 +6,14 @@ import { Email } from "./email";
   providedIn: 'root'
 })
 export class EmailResolverService implements Resolve<Email> {
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
+  resolve() {
+    return {
+      id: 'test',
+      subject: 'test',
+      text: 'test',
+      to: 'test',
+      from: 'test',
+      html: 'test',
+    }
   }
 }
