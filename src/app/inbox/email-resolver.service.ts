@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/router";
+import { ActivatedRouteSnapshot, Resolve } from "@angular/router";
 import { Email } from "./email";
+import { EmailService } from "./email.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailResolverService implements Resolve<Email> {
-  resolve() {
-    return {
-      id: 'test',
-      subject: 'test',
-      text: 'test',
-      to: 'test',
-      from: 'test',
-      html: 'test',
-    }
+  constructor(private emailService: EmailService) {}
+
+  resolve(route: ActivatedRouteSnapshot) {
+    const { id } = route.params;
+
+    return this.emailService.getEmail(id);
   }
 }
