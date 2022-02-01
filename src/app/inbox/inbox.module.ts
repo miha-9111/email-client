@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { SharedModule } from "../shared/shared.module";
 import { InboxRoutingModule } from './inbox-routing.module';
+
 import { HomeComponent } from './home/home.component';
 import { EmailCreateComponent } from './email-create/email-create.component';
 import { EmailReplyComponent } from './email-reply/email-reply.component';
@@ -23,7 +24,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     CommonModule,
-    InboxRoutingModule
+    InboxRoutingModule,
+    SharedModule
   ]
 })
 export class InboxModule { }
