@@ -21,4 +21,8 @@ export class EmailCreateComponent {
       html: '',
     }
   }
+
+  onSubmit(email: Email) {
+    // Send the email off via the email service
+  }
 }
