@@ -10,7 +10,7 @@ import { EmailService } from "../email.service";
 })
 export class EmailCreateComponent {
   showModal = false;
-  email: Email
+  email: Email;
 
   constructor(private authService: AuthService,
               private emailService: EmailService) {
